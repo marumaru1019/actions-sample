@@ -23,8 +23,8 @@ jobs:
 
       - name: タスクチェックスクリプトを実行
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }}
+          TOKEN: ${{ secrets.TOKEN }}
+          USERNAME: ${{ secrets.USERNAME }}
           REPO_NAME: ${{ secrets.REPO_NAME }}
           PROJECT_ID: ${{ secrets.PROJECT_ID }}
         run: python .github/scripts/check_tasks.py

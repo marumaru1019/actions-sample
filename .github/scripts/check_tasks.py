@@ -8,8 +8,8 @@ load_dotenv()
 
 GITHUB_GRAPHQL_URL = "https://api.github.com/graphql"
 GITHUB_REST_URL = "https://api.github.com"
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
-GITHUB_USERNAME = os.getenv("GITHUB_USERNAME")
+GITHUB_TOKEN = os.getenv("TOKEN")
+GITHUB_USERNAME = os.getenv("USERNAME")
 REPO_NAME = os.getenv("REPO_NAME")
 PROJECT_ID = os.getenv("PROJECT_ID")
 
