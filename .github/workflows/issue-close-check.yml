@@ -1,0 +1,30 @@
+name: Issue Closed Task Check
+
+on:
+  issues:
+    types: [closed]  # issueがクローズされたときにトリガー
+
+jobs:
+  check-tasks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v2
+
+      - name: Pythonをセットアップ
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: 依存関係をインストール
+        run: pip install requests python-dotenv
+
+      - name: タスクチェックスクリプトを実行
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+          USERNAME: ${{ secrets.USERNAME }}
+          REPO_NAME: ${{ secrets.REPO_NAME }}
+          PROJECT_ID: ${{ secrets.PROJECT_ID }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: python .github/scripts/check_tasks.py
