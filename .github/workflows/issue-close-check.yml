@@ -27,4 +27,4 @@ jobs:
           REPO_NAME: ${{ secrets.REPO_NAME }}
           PROJECT_ID: ${{ secrets.PROJECT_ID }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-        run: python .github/scripts/check_tasks.py
+        run: python .github/scripts/check_issue_closed_task.py
